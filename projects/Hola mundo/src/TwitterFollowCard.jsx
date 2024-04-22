@@ -1,7 +1,12 @@
 import profile from "./assets/profileimg.jpg";
 import PropTypes from "prop-types";
 
-export default function TwitterFollowCard({ nickName, userName }) {
+export default function TwitterFollowCard({
+  userName,
+  isFollowing,
+  formatNameAt,
+}) {
+  console.log(isFollowing);
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
@@ -12,7 +17,7 @@ export default function TwitterFollowCard({ nickName, userName }) {
         />
         <div className="tw-followCard-info">
           <strong>{userName}</strong>
-          <span className="tw-followCard-infoUserName">{nickName}</span>
+          {formatNameAt}
         </div>
       </header>
       <aside>
@@ -25,4 +30,6 @@ export default function TwitterFollowCard({ nickName, userName }) {
 TwitterFollowCard.propTypes = {
   nickName: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
+  isFollowing: PropTypes.bool,
+  formatNameAt: PropTypes.node,
 };

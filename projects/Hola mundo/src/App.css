@@ -72,3 +72,8 @@
 .tw-followCard-stopFollow {
   display: none;
 }
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
